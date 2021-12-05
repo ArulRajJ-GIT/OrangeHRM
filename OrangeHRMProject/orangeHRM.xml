@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="OrangeHRM Project">
+	<test name="Login_Module">
+		<classes>
+			<class name="loginModule.Login_Module">
+			</class>
+		</classes>
+	</test>
+	<test name="Login_Module">
+		<classes>
+			<class name="loginModule.UserManangement_MOdule">
+			</class>
+		</classes>
+	</test>
+</suite>
