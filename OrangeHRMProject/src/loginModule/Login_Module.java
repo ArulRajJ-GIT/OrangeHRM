@@ -5,7 +5,10 @@ import java.util.Properties;
 import org.com.defaultBrowser.BrowseLauncher;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 import org.testng.log4testng.Logger;
+
+import com.aventstack.extentreports.ExtentReporter;
 
 import pageObjects.DashBoard_PageObjects;
 import pageObjects.Login_PageObjects;
@@ -23,8 +26,10 @@ public class Login_Module extends BrowseLauncher {
 		Login_PageObjects.loginBtn.click();
 
 	}
-
+	
+	@Test
 	public void dashBoard() {
+		login();
 		
 		PageFactory.initElements(driver, DashBoard_PageObjects.class);
 

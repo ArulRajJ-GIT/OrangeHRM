@@ -10,6 +10,8 @@ import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import org.testng.log4testng.Logger;
 
@@ -30,7 +32,7 @@ public class BrowseLauncher {
 		return prop;
 	}
 	
-	@Test 
+	@BeforeSuite
 	public void launchBrowser() throws IOException {
 		PropertyConfigurator.configure("log4j.properties");
 		getProperties();
@@ -49,6 +51,12 @@ public class BrowseLauncher {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
+	}
+	
+	@AfterSuite
+	public void quitProcess() {
+
+		driver.quit();
 	}
 	
 	

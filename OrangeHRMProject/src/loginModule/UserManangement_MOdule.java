@@ -4,6 +4,7 @@ import org.com.defaultBrowser.BrowseLauncher;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 import org.testng.log4testng.Logger;
 
 import pageObjects.UserManagagement_PageObjects;
@@ -11,7 +12,8 @@ import pageObjects.UserManagagement_PageObjects;
 public class UserManangement_MOdule extends BrowseLauncher {
 
 	static Logger logger=Logger.getLogger(UserManangement_MOdule.class);
-
+	
+	
 	public void userManagement() {
 
 		PageFactory.initElements(driver, UserManagagement_PageObjects.class);
@@ -22,6 +24,7 @@ public class UserManangement_MOdule extends BrowseLauncher {
 		
 	}
 
+	
 	public void searchUser() {
 		
 		PageFactory.initElements(driver, UserManagagement_PageObjects.class);
@@ -34,8 +37,11 @@ public class UserManangement_MOdule extends BrowseLauncher {
 
 		UserManagagement_PageObjects.search.click();
 	}
-	
+	@Test
 	public void getUserValue() {
+		
+		userManagement();
+		searchUser();
 		
 		PageFactory.initElements(driver, UserManagagement_PageObjects.class);
 		
